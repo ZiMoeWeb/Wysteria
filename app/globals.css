@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 270 25% 2%;
+    --foreground: 270 10% 98%;
+
+    --card: 270 25% 3%;
+    --card-foreground: 270 10% 98%;
+
+    --popover: 270 25% 3%;
+    --popover-foreground: 270 10% 98%;
+
+    --primary: 270 95% 75%;
+    --primary-foreground: 270 10% 2%;
+
+    --secondary: 270 25% 10%;
+    --secondary-foreground: 270 10% 98%;
+
+    --muted: 270 25% 8%;
+    --muted-foreground: 270 5% 65%;
+
+    --accent: 270 35% 15%;
+    --accent-foreground: 270 10% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 270 10% 98%;
+
+    --border: 270 25% 15%;
+    --input: 270 25% 15%;
+    --ring: 270 95% 75%;
+
+    --radius: 0.5rem;
+  }
+
+  /* Add standardized typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply tracking-tight;
+  }
+
+  h1 {
+    @apply scroll-m-20 text-4xl font-bold lg:text-5xl;
+  }
+
+  h2 {
+    @apply scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0;
+  }
+
+  h3 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+
+  h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+  }
+
+  p {
+    @apply leading-7 [&:not(:first-child)]:mt-6;
+  }
+
+  .lead {
+    @apply text-xl text-muted-foreground;
+  }
+
+  small {
+    @apply text-sm font-medium leading-none;
+  }
+
+  .large {
+    @apply text-lg font-semibold;
+  }
+
+  blockquote {
+    @apply mt-6 border-l-2 border-purple-500/50 pl-6 italic;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar for Wysteria theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/50 rounded-full transition-colors hover:bg-primary;
+}
+
+/* Improve text rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
